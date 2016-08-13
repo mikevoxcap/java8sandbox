@@ -70,7 +70,7 @@ public class LambdaAssertions {
 
       List<String> newElements = Arrays.asList("pig", "apple", "bear", "dog", "cat",
             "otter");
-      Collections.sort(newElements, (String s1, String s2) -> s1.compareTo(s2));
+      Collections.sort(newElements, (s1, s2) -> s1.compareTo(s2));
 
       assertEquals("apple", newElements.get(0));
       assertEquals("bear", newElements.get(1));
@@ -79,4 +79,22 @@ public class LambdaAssertions {
       assertEquals("otter", newElements.get(4));
       assertEquals("pig", newElements.get(5));
    }
+
+   @Test
+   public void testMethodReference() throws Exception {
+      Person[] people = { new Person(15), new Person(10), new Person(83),
+            new Person(44) };
+      Arrays.sort(people, Person::compareByAge);
+      assertEquals(10, people[0].getAge());
+      assertEquals(15, people[1].getAge());
+      assertEquals(44, people[2].getAge());
+      assertEquals(83, people[3].getAge());
+   }
+
+   @Test
+   public void testCollectionLambdas() throws Exception {
+      List<String> elems = Arrays.asList("a", "b", "c");
+      elems.forEach(System.out::println);
+   }
+
 }
