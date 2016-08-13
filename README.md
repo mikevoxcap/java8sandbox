@@ -1,2 +1,2 @@
-# java8sandbox
-Sandbox for Java 8 examples
+# javasandbox
+Sandbox for Java examples
