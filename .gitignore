@@ -15,3 +15,5 @@ hs_err_pid*
 /.checkstyle
 /.classpath
 /.project
+/.gradle/
+/bin/
