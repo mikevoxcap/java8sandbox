@@ -33,9 +33,11 @@ public class LambdaAssertions {
          }
       };
 
+      // Structure here is (parameters) -> {code}
+      // The lambda expression has been put into a variable.
       FileFilter newWay = (File file) -> file.getName().endsWith(".java");
       File dir = new File(
-            "C:/dev/projects/javasandbox/src/test/java/com/michaelhoffmaninc/javasandbox/lambda");
+            "C:/dev/github-repos/javasandbox/src/test/java/com/michaelhoffmaninc/javasandbox/lambda");
       File[] filesOldWay = dir.listFiles(oldWay);
       File[] filesNewWay = dir.listFiles(newWay);
       File[] filesNewWayCompact = dir
@@ -70,6 +72,8 @@ public class LambdaAssertions {
 
       List<String> newElements = Arrays.asList("pig", "apple", "bear", "dog", "cat",
             "otter");
+      // Another example of lambdas where the expression has been passed as a
+      // parameter to the sort method.
       Collections.sort(newElements, (s1, s2) -> s1.compareTo(s2));
 
       assertEquals("apple", newElements.get(0));
